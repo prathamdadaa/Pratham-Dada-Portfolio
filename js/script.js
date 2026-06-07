@@ -1,19 +1,36 @@
-// Wait for the DOM to fully load
-document.addEventListener('DOMContentLoaded', () => {
-    
-    // Select your name element from the Hero section
-    const nameTitle = document.querySelector('.dynamic-title');
-    
-    if (nameTitle) {
-        // Add hover effect via JavaScript
-        nameTitle.addEventListener('mouseenter', () => {
-            nameTitle.style.color = '#38bdf8'; // Accent Blue
-        });
-        
-        nameTitle.addEventListener('mouseleave', () => {
-            nameTitle.style.color = '#f8fafc'; // Back to main white
-        });
-    }
+// Scroll Reveal Animation
+function reveal() {
+    var reveals = document.querySelectorAll(".reveal");
 
-    console.log("Pratham Dada's Portfolio JS Loaded Successfully.");
-});
+    for (var i = 0; i < reveals.length; i++) {
+        var windowHeight = window.innerHeight;
+        var elementTop = reveals[i].getBoundingClientRect().top;
+        var elementVisible = 150;
+
+        if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("active");
+        }
+    }
+}
+
+// Add event listener when user scrolls
+window.addEventListener("scroll", reveal);
+
+// Trigger once on load
+reveal();
+
+// Simple Typewriter Effect (Optional)
+const textElement = document.getElementById('typewriter');
+const text = "Web Developer | Creator | Learner";
+let index = 0;
+
+function type() {
+    if (index < text.length) {
+        textElement.innerHTML += text.charAt(index);
+        index++;
+        setTimeout(type, 100);
+    }
+}
+
+// Uncomment the line below to start typing effect
+// type();
