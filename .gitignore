@@ -1,0 +1,28 @@
+# --- OS Metadata Files ---
+.DS_Store
+Thumbs.db
+*.lnk
+
+# --- Editor / IDE Configs ---
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# --- Local Development & Logs ---
+*.log
+.npm/
+dist/
+build/
+
+# --- Future-Proofing for Full-Stack ---
+# These are ignored now so you don't accidentally commit them later when you scale to Node.js/Backend
+node_modules/
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
