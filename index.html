@@ -4,92 +4,117 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pratham Dada | Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Link to CSS -->
     <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <header>
-        <nav class="nav-container">
-            <a href="#" class="logo">PD.</a>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Background Blobs -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
 
-    <section id="home" class="hero">
-        <h3>Hi, my name is</h3>
-        <h1 class="dynamic-title">Pratham Dada.</h1>
-        <h2>I build things for the web.</h2>
-        <p>I am an aspiring Full-Stack Web Developer currently laying down strong computer science foundations while pursuing my BCA degree. I love transforming complex problems into elegant digital realities.</p>
-        <a href="#contact" class="btn">Get In Touch</a>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">PD.</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#journey">Journey</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="social-icons">
+            <!-- REPLACE THE # WITH YOUR LINKS -->
+            <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h3>Namaste, I am</h3>
+            <h1>Pratham Dada</h1>
+            <h3 id="typewriter">Web Developer | Creator | Learner</h3>
+            <p>
+                From <strong>Dhanbad, Jharkhand</strong>. I cleared <strong>Class 12 (Commerce)</strong> and wrote my first HTML page in <strong>Class 6</strong>. 
+                Now, I'm planning to do <strong>BCA</strong> to master web development.
+            </p>
+            <a href="#contact" class="cta-btn">Let's Build Together</a>
+        </div>
     </section>
 
-    <section id="about">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-content">
-            <p>Hello! I am a passionate programmer focused on mastering full-stack development methodologies. Driven by curiosity, I recently started my formal journey into computing to build robust, scalable applications from scratch.</p>
-            <p>I always look forward to refining my coding logic, learning modern frameworks, and engineering seamless user experiences across the stack.</p>
-            <div class="education-badge">
-                <i class="fa-solid fa-graduation-cap"></i> Pursuing BCA &bull; IGNOU Open University
+    <!-- About / Journey Section -->
+    <section id="journey">
+        <h2 class="section-title">My Journey</h2>
+        <div class="card-grid">
+            <div class="card reveal">
+                <h3> The Spark </h3>
+                <p>I started coding purely out of interest back in Class 6. I didn't wait for college to teach me; I taught myself because I loved it.</p>
+            </div>
+            <div class="card reveal">
+                <h3> The Academic Path </h3>
+                <p>I chose <strong>Commerce</strong> in Class 12. Understanding business logic helps me understand how websites actually work for companies.</p>
+            </div>
+            <div class="card reveal">
+                <h3> The Goal </h3>
+                <p>Enrolling in <strong>BCA</strong> is the next step to grab deep technical knowledge and become a full-stack pro.</p>
             </div>
         </div>
     </section>
 
+    <!-- Skills Section -->
     <section id="skills">
-        <h2 class="section-title">My Skills</h2>
-        <div class="skills-grid">
-            
-            <div class="skill-category">
-                <h4><i class="fa-solid fa-code"></i> Frontend</h4>
-                <ul class="skill-list">
-                    <li>HTML5</li>
-                    <li>CSS3</li>
-                    <li>JavaScript (ES6+)</li>
-                    <li>Responsive Design</li>
-                </ul>
+        <h2 class="section-title">Skills & Tools</h2>
+        <div class="card-grid">
+            <div class="card reveal">
+                <h3>Frontend</h3>
+                <div class="skill-tags">
+                    <span class="tag">HTML5</span>
+                    <span class="tag">CSS3</span>
+                    <span class="tag">JavaScript</span>
+                </div>
             </div>
-
-            <div class="skill-category">
-                <h4><i class="fa-solid fa-server"></i> Backend Development</h4>
-                <ul class="skill-list">
-                    <li>Node.js (Learning)</li>
-                    <li>Logic Building</li>
-                    <li>Web Architectures</li>
-                </ul>
+            <div class="card reveal">
+                <h3>Tools</h3>
+                <div class="skill-tags">
+                    <span class="tag">VS Code</span>
+                    <span class="tag">Git</span>
+                    <span class="tag">GitHub</span>
+                </div>
             </div>
-
-            <div class="skill-category">
-                <h4><i class="fa-solid fa-screwdriver-wrench"></i> Tools & Methods</h4>
-                <ul class="skill-list">
-                    <li>Git & GitHub</li>
-                    <li>VS Code</li>
-                    <li>UI/UX Design Basics</li>
-                </ul>
+            <div class="card reveal">
+                <h3>Learning</h3>
+                <div class="skill-tags">
+                    <span class="tag">React</span>
+                    <span class="tag">Node.js</span>
+                    <span class="tag">MongoDB</span>
+                </div>
             </div>
-
         </div>
     </section>
 
-    <footer id="contact">
-        <div class="footer-content">
-            <h3>Let's Connect</h3>
-            <p>I'm currently looking for collaborative projects and networking opportunities. Feel free to reach out!</p>
-            
-            <div class="social-links">
-                <a href="https://linkedin.com/in/pratham-dada-405029403" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://github.com/prathamdadaa" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
-                <a href="https://instagram.com/the_world_with_dada_since_2k25" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            </div>
-
-            <p class="copyright">&copy; 2026 Pratham Dada. All rights reserved.</p>
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">Ready to Collaborate?</h2>
+        <div class="contact-box reveal">
+            <p>I'm currently looking for new projects and learning opportunities.</p>
+            <a href="mailto:pratham@example.com" class="cta-btn">Email Me</a>
         </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026Pratham Dada. Built with code & passion.</p>
     </footer>
 
+    <!-- Link to JS -->
     <script src="js/script.js"></script>
 </body>
 </html>
