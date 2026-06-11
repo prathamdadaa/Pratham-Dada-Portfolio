@@ -19,9 +19,10 @@ body {
     background: var(--bg-gradient);
     color: var(--text-white);
     overflow-x: hidden;
+    width: 100%;
 }
 
-/* Background Blobs */
+/* --- Background Blobs --- */
 .blob {
     position: absolute;
     filter: blur(80px);
@@ -30,15 +31,29 @@ body {
     animation: moveBlob 10s infinite alternate;
 }
 
-.blob-1 { top: 10%; left: 10%; width: 300px; height: 300px; background: var(--secondary); }
-.blob-2 { bottom: 10%; right: 10%; width: 400px; height: 400px; background: var(--primary); animation-delay: -5s; }
+.blob-1 { 
+    top: 10%; 
+    left: 10%; 
+    width: 300px; 
+    height: 300px; 
+    background: var(--secondary); 
+}
+
+.blob-2 { 
+    bottom: 10%; 
+    right: 10%; 
+    width: 400px; 
+    height: 400px; 
+    background: var(--primary); 
+    animation-delay: -5s; 
+}
 
 @keyframes moveBlob {
     0% { transform: translate(0, 0) scale(1); }
     100% { transform: translate(20px, 40px) scale(1.1); }
 }
 
-/* Navigation */
+/* --- Navigation Layout --- */
 nav {
     display: flex;
     justify-content: space-between;
@@ -47,12 +62,20 @@ nav {
     position: fixed;
     width: 100%;
     top: 0;
+    left: 0;
     z-index: 1000;
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
     border-bottom: 1px solid var(--glass);
+    flex-wrap: wrap; /* Allows wrapping on small screens */
+    gap: 15px;
 }
 
-.logo { font-size: 1.5rem; font-weight: 700; color: var(--primary); }
+.logo { 
+    font-size: 1.5rem; 
+    font-weight: 700; 
+    color: var(--primary); 
+}
 
 .nav-links {
     display: flex;
@@ -61,14 +84,14 @@ nav {
 }
 
 .nav-links a {
-    color: var(--text-main);
+    color: var(--text-white); /* Fixed broken variable */
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: var(--accent-color);
+    color: var(--primary); /* Fixed broken variable */
 }
 
 .social-icons a {
@@ -78,16 +101,19 @@ nav {
     transition: 0.3s;
 }
 
-.social-icons a:hover { color: var(--primary); transform: translateY(-3px); }
+.social-icons a:hover { 
+    color: var(--primary); 
+    transform: translateY(-3px); 
+}
 
-/* Hero Section */
+/* --- Hero Section --- */
 .hero {
-    height: 100vh;
+    min-height: 100vh; /* Changed to min-height for better dynamic scaling */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 0 20px;
+    padding: 100px 20px 60px 20px; /* Prevent header overlap */
 }
 
 .hero-content h1 {
@@ -96,9 +122,14 @@ nav {
     background: -webkit-linear-gradient(#00f260, #0575e6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    line-height: 1.2;
 }
 
-.hero-content h3 { font-size: 1.5rem; font-weight: 300; margin-bottom: 20px; }
+.hero-content h3 { 
+    font-size: 1.5rem; 
+    font-weight: 300; 
+    margin-bottom: 20px; 
+}
 
 .hero-content p {
     font-size: 1rem;
@@ -109,6 +140,7 @@ nav {
 }
 
 .cta-btn {
+    display: inline-block;
     padding: 12px 30px;
     background: var(--primary);
     color: var(--bg-dark);
@@ -119,10 +151,16 @@ nav {
     box-shadow: 0 0 20px rgba(0, 242, 96, 0.4);
 }
 
-.cta-btn:hover { background: #fff; box-shadow: 0 0 30px rgba(0, 242, 96, 0.8); }
+.cta-btn:hover { 
+    background: #fff; 
+    box-shadow: 0 0 30px rgba(0, 242, 96, 0.8); 
+    transform: translateY(-2px);
+}
 
-/* General Sections */
-section { padding: 80px 10%; }
+/* --- General Sections --- */
+section { 
+    padding: 100px 10% 60px 10%; 
+}
 
 .section-title {
     font-size: 2.5rem;
@@ -139,11 +177,13 @@ section { padding: 80px 10%; }
     margin: 10px auto 0;
 }
 
-/* Cards */
+/* --- Responsive Auto-Adjusting Grid --- */
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* Browser automatically calculates columns perfectly per resolution */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
+    width: 100%;
 }
 
 .card {
@@ -154,11 +194,25 @@ section { padding: 80px 10%; }
     transition: 0.4s;
 }
 
-.card:hover { transform: translateY(-10px); background: rgba(255, 255, 255, 0.1); }
+.card:hover { 
+    transform: translateY(-10px); 
+    background: rgba(255, 255, 255, 0.15); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
 
-.card h3 { margin-bottom: 15px; color: var(--primary); }
+.card h3 { 
+    margin-bottom: 15px; 
+    color: var(--primary); 
+}
 
-.skill-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
+/* --- Skills Layout Elements --- */
+.skill-tags { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 10px; 
+    margin-top: 15px; 
+}
+
 .skill-list li {
     background-color: rgba(255, 255, 255, 0.05);
     padding: 0.5rem 1rem;
@@ -166,29 +220,107 @@ section { padding: 80px 10%; }
     font-size: 0.9rem;
     transition: background 0.3s;
     
-    /* Added for icon alignment */
+    /* Aligns icons perfectly with text */
     display: flex;
     align-items: center;
     gap: 0.5rem; 
 }
 
+.skill-list li:hover {
+    background-color: rgba(0, 242, 96, 0.1);
+}
+
 .tag {
-    background: rgba(255,255,255,0.1);
-    padding: 5px 15px;
+    background: rgba(255,255,255,0.05);
+    padding: 6px 16px;
     border-radius: 20px;
     font-size: 0.8rem;
     border: 1px solid var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background 0.3s;
 }
 
-/* Footer */
-footer { text-align: center; padding: 30px; border-top: 1px solid var(--glass); color: #888; }
+.tag:hover {
+    background: rgba(0, 242, 96, 0.15);
+}
 
-/* Mobile */
+/* --- Footer --- */
+footer { 
+    text-align: center; 
+    padding: 40px 20px; 
+    border-top: 1px solid var(--glass); 
+    color: #888; 
+}
+
+/* --- Scroll Reveal Defaults --- */
+.reveal { 
+    opacity: 0; 
+    transform: translateY(30px); 
+    transition: 0.8s ease; 
+}
+
+.reveal.active { 
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+/* ==========================================================================
+   GLOBAL RESPONSIVE MEDIA QUERIES (Auto-adjusts for different devices)
+   ========================================================================== */
+
+/* Tablets & Small Screen Devices (e.g., iPads) */
+@media (max-width: 992px) {
+    nav {
+        padding: 15px 5%;
+    }
+    section {
+        padding: 80px 5% 40px 5%;
+    }
+}
+
+/* Mobile Devices & Smartphones (e.g., iPhones, Android phones) */
 @media (max-width: 768px) {
-    .hero-content h1 { font-size: 2.5rem; }
-    .nav-links { display: none; }
+    nav {
+        justify-content: center; /* Center links on mobile */
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        gap: 1.2rem;
+        font-size: 0.95rem;
+    }
+
+    .social-icons {
+        display: none; /* Keeps layout clean on extremely small viewpoints */
+    }
+
+    .hero-content h1 { 
+        font-size: 2.5rem; 
+    }
+
+    .hero-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .card {
+        padding: 20px; /* Saves real estate inside container blocks */
+    }
 }
 
-/* Animations */
-.reveal { opacity: 0; transform: translateY(30px); transition: 0.8s; }
-.reveal.active { opacity: 1; transform: translateY(0); }
+/* Ultra-Small viewports (Compact Phones) */
+@media (max-width: 400px) {
+    .nav-links {
+        gap: 0.8rem;
+        font-size: 0.85rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+}
