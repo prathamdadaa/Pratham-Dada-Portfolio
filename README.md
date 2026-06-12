@@ -2,7 +2,7 @@
 # 🚀 Personal Portfolio Website
 
 Welcome to the repository for my personal portfolio website! This project serves as a digital hub to showcase my web development journey, featured projects, skills, and creations. It is designed to be clean, responsive, and highly interactive.
-✨ Live Demo: [https://Pratham-Dada-Portfolio.github.io]
+✨ Live Demo: [https://prathamdadaa.github.io/Pratham-Dada-Portfolio/]
 
 ---
 
